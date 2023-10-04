@@ -43,10 +43,7 @@ int main()
 
         break;
 
-    default:
-        printf("Wrong Input");
+    default: printf("Wrong Input");
     }
-
-
     return 0;
 }
