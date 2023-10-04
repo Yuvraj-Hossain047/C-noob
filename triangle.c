@@ -4,8 +4,8 @@
 int main()
 {
     char c;
-    int x,y,z,s,r;
-
+    int x,y,z;
+    double s,r,n;
     printf("==Triangle Area Calculator==\n\nInput The Triangle Type(a,b):\n a. 3 Side\n b. Base & Height\n\n");
     scanf("%c", &c);
 
@@ -21,9 +21,9 @@ int main()
 
         if( (x+y)>z && (y+z)>x && (z+x)>y )
         {
-            s=(x+y+z)/2;
+            s=(x+y+z)/2.0;
             r=sqrt(s*(s-x)*(s-y)*(s-z));
-            printf("\nThe area of the triangle is %d\n", r);
+            printf("\nThe area of the triangle is %.2f\n", r);
         }
         else
         {
@@ -39,11 +39,21 @@ int main()
         printf("\nEnter Base & Height of the triangle:\n");
         scanf("%d %d", &x, &y);
 
-        (x>0 && y>0) ? printf("\nThe area of the triangle is %d\n", x*y) : printf("This is not a triangle");
+        if(x>0 && y>0){
+
+                n=x*y*.5;
+                printf("\nThe area of the triangle is %.2f\n",n);
+        }
+        else{
+            printf("This is not a triangle");
+        }
 
         break;
 
-    default: printf("Wrong Input");
+    default:
+        printf("Wrong Input");
     }
+
+
     return 0;
 }
